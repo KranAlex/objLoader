@@ -47,7 +47,7 @@ void objloader::StartReadObject(Model *pModel)
 	//if (!pModel) return;
 	char line[250] = { 0 };
 	char ch = 0;
-	printf("in func StartReadModel\n");
+
 	while (!feof(m_file))
 	{
 		ch = fgetc(m_file);
@@ -55,27 +55,23 @@ void objloader::StartReadObject(Model *pModel)
 		{
         case '#':
             fgets(line,100,m_file);
-            //printf("in func probell\n");
             break;
 		case 'v':
 			if (!m_bJustReadAFace)
 			{
 				SaveInformAboutObject(pModel,&obj);
 			}
-			//printf("in func ReadVertex\n");
+			
 			ReadVertexOrVertexNormals();
 			break;
 		case 'f':
-		    //printf("in func ReadFace\n");
-			ReadFace();
+		    ReadFace();
 			break;
 		case 'm':
-		    //printf("in func ReadMaterial\n");
-			ReadMaterial();
+		    ReadMaterial();
 			obj.materialId++;
 			break;
 		case 'n':
-		    //printf("new line\n");
 			fgets(line, 100, m_file);
 			break;
         case 'o':
@@ -180,8 +176,6 @@ void objloader::ReadMaterial()
 
 void objloader::SaveInformAboutObject(Model *pModel, Object *currentObject)
 {
-	//TODO: реализовать в ближайшем будущем добавление объекта
-	//малость коряво, но выйдет
 	if (!(PushObject(currentObject) == 0))
     {
         printf("chet ne tak");
