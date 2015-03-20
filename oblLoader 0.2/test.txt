@@ -1,3 +1,0 @@
-mtllib lol.mtl
-o Circle.01
-v 2.608400 2.493694 -0.083056
