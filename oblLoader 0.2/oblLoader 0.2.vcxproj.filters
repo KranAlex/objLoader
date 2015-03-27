@@ -30,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="lol.mtl" />
+    <None Include="VERSION" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
